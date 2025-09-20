@@ -24,6 +24,7 @@
                     ['key' => 'email',  'label' => 'Email'],
                     ['key' => 'phone',  'label' => 'Phone'],
                     ['key' => 'status', 'label' => 'Status'],
+                    ['key' => 'revenue', 'label' => 'Revenue'],
                 ];
 
                 $CUSTOMER_TABLE_SHOW_ACTIONS = true;
@@ -40,12 +41,14 @@
                         'email' => 'jane.cooper@example.com',
                         'phone' => '+1 222 333 4444',
                         'status' => 'Active',
+                        'revenue' => 'PKR 45,890',
                     ],
                     [
                         'name' => 'Jacob Jones',
                         'email' => 'jacob.jones@example.com',
                         'phone' => '+1 555 666 7777',
                         'status' => 'Pending',
+                        'revenue' => 'PKR 32,150',
                     ],
                 ];
                 ?>
@@ -136,33 +139,153 @@
                             <div class="modal-body">
                                 <form id="customerForm">
                                     <input type="hidden" id="customerIndex" name="index" value="">
-                                    <div class="row g-2">
-                                        <div class="col-12 col-md-6">
-                                            <label for="customerName" class="form-label">Name</label>
+                                    <div class="row g-3">
+                                        <!-- 1. Text Input -->
+                                        <div class="col-12 col-md-4">
+                                            <label for="customerName" class="form-label">Full Name</label>
                                             <input type="text" class="form-control form-control-sm" id="customerName" name="name" required>
                                         </div>
-                                        <div class="col-12 col-md-6">
-                                            <label for="customerEmail" class="form-label">Email</label>
-                                            <input type="email" class="form-control form-control-sm" id="customerEmail" name="email" required>
-                                        </div>
-                                        <div class="col-12 col-md-6">
-                                            <label for="customerPhone" class="form-label">Phone</label>
-                                            <input type="text" class="form-control form-control-sm" id="customerPhone" name="phone" required>
-                                        </div>
-                                        <div class="col-12 col-md-6">
+                                        
+                                        <!-- 2. Dropdown (Select) -->
+                                        <div class="col-12 col-md-4">
                                             <label for="customerStatus" class="form-label">Status</label>
                                             <select class="form-select form-select-sm" id="customerStatus" name="status" required>
+                                                <option value="">Select Status</option>
                                                 <option value="Active">Active</option>
                                                 <option value="Pending">Pending</option>
                                                 <option value="Inactive">Inactive</option>
                                             </select>
                                         </div>
+                                        
+                                        <!-- 3. Email Input -->
+                                        <div class="col-12 col-md-4">
+                                            <label for="customerEmail" class="form-label">Email Address</label>
+                                            <input type="email" class="form-control form-control-sm" id="customerEmail" name="email" required>
+                                        </div>
+                                        
+                                        <!-- 4. Number Input -->
+                                        <div class="col-12 col-md-4">
+                                            <label for="customerAge" class="form-label">Age</label>
+                                            <input type="number" class="form-control form-control-sm" id="customerAge" name="age" min="1" max="120">
+                                        </div>
+                                        
+                                        <!-- 5. Date Input -->
+                                        <div class="col-12 col-md-4">
+                                            <label for="customerBirthDate" class="form-label">Birth Date</label>
+                                            <input type="date" class="form-control form-control-sm" id="customerBirthDate" name="birth_date">
+                                        </div>
+
+                                        <!-- 6. File Input -->
+                                        <div class="col-12 col-md-4">
+                                            <label for="customerPhoto" class="form-label">Profile Photo</label>
+                                            <input type="file" class="form-control form-control-sm" id="customerPhoto" name="photo" accept="image/*">
+                                        </div>
+                                        
+                                        <!-- 7. Textarea -->
+                                        <div class="col-12">
+                                            <label for="customerNotes" class="form-label">Notes</label>
+                                            <textarea class="form-control form-control-sm" id="customerNotes" name="notes" rows="3" placeholder="Additional notes about the customer..."></textarea>
+                                        </div>
+                                        
                                     </div>
                                 </form>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary" form="customerForm">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer View Detail Modal -->
+                <div class="modal fade" id="customerViewModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <div class="modal-title-container">
+                                    <div class="modal-avatar">
+                                        <div class="avatar-placeholder" id="customerViewModalAvatar">JD</div>
+                                    </div>
+                                    <h5 class="modal-title" id="customerViewModalTitle">Customer Details</h5>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row g-3">
+
+
+                                    <!-- Personal Information -->
+                                    <div class="col-12 col-md-12">
+                                        <div class="info-section">
+                                            <h6 class="info-section-title">
+                                                <i class="fas fa-user"></i>
+                                                Personal Information
+                                            </h6>
+                                            <div class="info-item-row">
+                                                <div class="info-item">
+                                                    <label>Email</label>
+                                                    <span id="customerViewEmail">john.doe@example.com</span>
+                                                </div>
+                                                <div class="info-item">
+                                                    <label>Phone</label>
+                                                    <span id="customerViewPhone">+1 (555) 123-4567</span>
+                                                </div>
+                                            </div>
+                                            <div class="info-item-row">
+                                                <div class="info-item">
+                                                    <label>Age</label>
+                                                    <span id="customerViewAge">28</span>
+                                                </div>
+                                                <div class="info-item">
+                                                    <label>Birth Date</label>
+                                                    <span id="customerViewBirthDate">1995-03-15</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Status & Revenue -->
+                                    <div class="col-12 col-md-12">
+                                        <div class="info-section">
+                                            <h6 class="info-section-title">
+                                                <i class="fas fa-chart-line"></i>
+                                                Business Information
+                                            </h6>
+                                            <div class="info-item-row">
+                                                <div class="info-item">
+                                                    <label>Status</label>
+                                                    <span class="status-badge" id="customerViewStatusDetail">Active</span>
+                                                </div>
+                                                <div class="info-item">
+                                                    <label>Revenue</label>
+                                                    <span class="revenue-amount" id="customerViewRevenue">PKR 45,890</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- Notes Section -->
+                                    <div class="col-12">
+                                        <div class="info-section">
+                                            <h6 class="info-section-title">
+                                                <i class="fas fa-sticky-note"></i>
+                                                Notes
+                                            </h6>
+                                            <div class="notes-content" id="customerViewNotes">
+                                                <p>Additional notes about the customer will appear here. This section can contain important information, preferences, or any other relevant details.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" id="editCustomerFromView">
+                                    <i class="fas fa-edit"></i>
+                                    Edit Customer
+                                </button>
                             </div>
                         </div>
                     </div>
