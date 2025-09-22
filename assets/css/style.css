@@ -720,7 +720,7 @@ input, select, textarea {
 .stat {
   background: var(--color-white);
   border-radius: var(--radius-lg);
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;

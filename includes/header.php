@@ -9,7 +9,7 @@ $current_page = current_page_name();
 ?>
 <header class="header">
     <div class="header-left">
-        <a href="index.php" class="header-logo"><img src="assets/images/logo.jpg" alt="<?php echo APP_NAME; ?> Logo"></a>
+        <a href="index.php" class="header-logo"><img src="assets/images/logo-white.png" alt="<?php echo APP_NAME; ?> Logo"></a>
         <nav class="header-nav">
             <?php foreach ($menu_items as $item): if ($item['label'] === 'Settings') { continue; } $active = ($current_page === $item['url']) ? 'active' : ''; ?>
                 <a href="<?php echo $item['url']; ?>" class="header-nav-link <?php echo $active; ?>">

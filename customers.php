@@ -72,8 +72,8 @@
                                         <option value="Pending">Pending</option>
                                         <option value="Inactive">Inactive</option>
                                     </select>
-                                    <button type="button" class="btn btn-md btn--secondary" id="applyCustomerFilter"><i class="fas fa-filter"></i></button>
-                                    <button type="button" class="btn btn-md btn--secondary" id="clearCustomerFilter"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-sm btn--secondary" id="applyCustomerFilter"><i class="fas fa-filter"></i></button>
+                                    <button type="button" class="btn btn-sm btn--secondary" id="clearCustomerFilter"><i class="fas fa-times"></i></button>
                                 </div>
                             </form>
                         </div>
