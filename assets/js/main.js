@@ -89,16 +89,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Reset all buttons
         [dayBtn, monthBtn, yearBtn].forEach(btn => {
             if (btn) {
-                btn.classList.remove('btn-primary-custom');
-                btn.classList.add('btn-secondary-custom');
+                btn.classList.remove('btn--primary');
+                btn.classList.add('btn--secondary');
             }
         });
         
         // Set active button
         const activeBtn = document.getElementById(`sales${activePeriod.charAt(0).toUpperCase() + activePeriod.slice(1)}Btn`);
         if (activeBtn) {
-            activeBtn.classList.remove('btn-secondary-custom');
-            activeBtn.classList.add('btn-primary-custom');
+            activeBtn.classList.remove('btn--secondary');
+            activeBtn.classList.add('btn--primary');
         }
     }
     
@@ -294,7 +294,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.querySelectorAll('.table-custom tbody tr').forEach(row => {
+document.querySelectorAll('.table tbody tr').forEach(row => {
     row.addEventListener('click', function(e) {
         if (!e.target.closest('button')) {
             console.log('Row clicked');
@@ -304,7 +304,7 @@ document.querySelectorAll('.table-custom tbody tr').forEach(row => {
 
 // Customers page: open modal for add/edit
 document.addEventListener('click', function(e) {
-    const addBtn = e.target.closest('.btn-primary-custom');
+    const addBtn = e.target.closest('.btn--primary');
     if (addBtn && addBtn.textContent.trim().includes('Add Customer')) {
         const modalEl = document.getElementById('customerModal');
         if (modalEl) {
@@ -326,11 +326,11 @@ document.addEventListener('click', function(e) {
         const email = document.getElementById('filterEmail')?.value.toLowerCase() || '';
         const phone = document.getElementById('filterPhone')?.value.toLowerCase() || '';
         const status = document.getElementById('filterStatus')?.value || '';
-        document.querySelectorAll('.table-custom tbody tr').forEach(tr => {
+        document.querySelectorAll('.table tbody tr').forEach(tr => {
             const rowName = tr.children[0]?.innerText?.toLowerCase() || '';
             const rowEmail = tr.children[1]?.innerText?.toLowerCase() || '';
             const rowPhone = tr.children[2]?.innerText?.toLowerCase() || '';
-            const rowStatus = tr.querySelector('.badge-custom')?.textContent || '';
+            const rowStatus = tr.querySelector('.badge')?.textContent || '';
             const matchesName = q === '' || rowName.includes(q);
             const matchesEmail = email === '' || rowEmail.includes(email);
             const matchesPhone = phone === '' || rowPhone.includes(phone);
@@ -349,12 +349,12 @@ document.addEventListener('click', function(e) {
         if (eInput) eInput.value = '';
         if (pInput) pInput.value = '';
         if (sSelect) sSelect.value = '';
-        document.querySelectorAll('.table-custom tbody tr').forEach(tr => tr.style.display = '');
+        document.querySelectorAll('.table tbody tr').forEach(tr => tr.style.display = '');
         updateCustomerClearVisibility();
     }
 });
 
-// Show/Hide Clear button depending on filters filled
+// Enable/Disable Clear button depending on filters filled
 function updateCustomerClearVisibility() {
     const clearBtn = document.getElementById('clearCustomerFilter');
     if (!clearBtn) return;
@@ -363,7 +363,7 @@ function updateCustomerClearVisibility() {
     const phone = document.getElementById('filterPhone')?.value || '';
     const status = document.getElementById('filterStatus')?.value || '';
     const hasAny = (q.trim() !== '' || email.trim() !== '' || phone.trim() !== '' || status.trim() !== '');
-    clearBtn.style.display = hasAny ? '' : 'none';
+    clearBtn.disabled = !hasAny;
 }
 
 ['filterQuery','filterEmail','filterPhone'].forEach(id => {
@@ -400,7 +400,7 @@ document.addEventListener('click', function(e) {
 
 // Customer View Modal Functionality
 document.addEventListener('click', function(e) {
-    const viewBtn = e.target.closest('.btn-custom');
+    const viewBtn = e.target.closest('.btn');
     if (viewBtn && viewBtn.querySelector('.fa-eye')) {
         // Get customer data from the row
         const row = viewBtn.closest('tr');
@@ -410,7 +410,7 @@ document.addEventListener('click', function(e) {
                 name: cells[0]?.textContent?.trim() || 'Unknown',
                 email: cells[1]?.textContent?.trim() || '',
                 phone: cells[2]?.textContent?.trim() || '',
-                status: cells[3]?.querySelector('.badge-custom')?.textContent?.trim() || 'Unknown',
+                status: cells[3]?.querySelector('.badge')?.textContent?.trim() || 'Unknown',
                 revenue: cells[4]?.textContent?.trim() || 'PKR 0'
             };
             
@@ -448,13 +448,13 @@ function populateCustomerViewModal(customerData) {
     
     // Update status badge styling in business section
     const statusDetailBadge = document.getElementById('customerViewStatusDetail');
-    statusDetailBadge.className = 'badge-custom';
+    statusDetailBadge.className = 'badge';
     if (customerData.status === 'Active') {
-        statusDetailBadge.classList.add('badge-success');
+        statusDetailBadge.classList.add('badge--success');
     } else if (customerData.status === 'Pending') {
-        statusDetailBadge.classList.add('badge-warning');
+        statusDetailBadge.classList.add('badge--warning');
     } else if (customerData.status === 'Inactive') {
-        statusDetailBadge.classList.add('badge-danger');
+        statusDetailBadge.classList.add('badge--danger');
     }
     
     // Generate realistic dummy data based on customer name

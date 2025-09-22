@@ -23,38 +23,38 @@
 
                 <div class="row mb-4">
                     <div class="col-lg-3 col-md-6 col-12">
-                        <div class="stat-card">
-                            <div class="stat-icon primary"><i class="fas fa-users"></i></div>
-                            <div class="stat-content">
-                                <div class="stat-label">Total Customers</div>
-                                <div class="stat-value">8,543</div>
+                        <div class="stat">
+                            <div class="stat__icon stat__icon--primary"><i class="fas fa-users"></i></div>
+                            <div class="stat__content">
+                                <div class="stat__label">Total Customers</div>
+                                <div class="stat__value">8,543</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
-                        <div class="stat-card">
-                            <div class="stat-icon primary"><i class="fas fa-dollar-sign"></i></div>
-                            <div class="stat-content">
-                                <div class="stat-label">Revenue</div>
-                                <div class="stat-value">PKR 245,890</div>
+                        <div class="stat">
+                            <div class="stat__icon stat__icon--primary"><i class="fas fa-dollar-sign"></i></div>
+                            <div class="stat__content">
+                                <div class="stat__label">Revenue</div>
+                                <div class="stat__value">PKR 245,890</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
-                        <div class="stat-card">
-                            <div class="stat-icon primary"><i class="fas fa-user-plus"></i></div>
-                            <div class="stat-content">
-                                <div class="stat-label">New Leads</div>
-                                <div class="stat-value">324</div>
+                        <div class="stat">
+                            <div class="stat__icon stat__icon--primary"><i class="fas fa-user-plus"></i></div>
+                            <div class="stat__content">
+                                <div class="stat__label">New Leads</div>
+                                <div class="stat__value">324</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 col-12">
-                        <div class="stat-card">
-                            <div class="stat-icon primary"><i class="fas fa-chart-line"></i></div>
-                            <div class="stat-content">
-                                <div class="stat-label">Conversion Rate</div>
-                                <div class="stat-value">18.5%</div>
+                        <div class="stat">
+                            <div class="stat__icon stat__icon--primary"><i class="fas fa-chart-line"></i></div>
+                            <div class="stat__content">
+                                <div class="stat__label">Conversion Rate</div>
+                                <div class="stat__value">18.5%</div>
                             </div>
                         </div>
                     </div>
@@ -62,22 +62,22 @@
 
                 <div class="row mb-4">
                     <div class="col-lg-8">
-                        <div class="card-custom">
-                            <div class="card-header-custom dashboard-card-header">
-                                <h3 class="card-title">Sales Overview</h3>
+                        <div class="card">
+                            <div class="card__header dashboard-card-header">
+                                <h3 class="card__title">Sales Overview</h3>
                                 <div class="btn-group">
-                                    <button class="btn-custom btn-sm btn-secondary-custom" id="salesDayBtn">Day</button>
-                                    <button class="btn-custom btn-sm btn-primary-custom" id="salesMonthBtn">Month</button>
-                                    <button class="btn-custom btn-sm btn-secondary-custom" id="salesYearBtn">Year</button>
+                                    <button class="btn btn-sm btn--secondary" id="salesDayBtn">Day</button>
+                                    <button class="btn btn-sm btn--primary" id="salesMonthBtn">Month</button>
+                                    <button class="btn btn-sm btn--secondary" id="salesYearBtn">Year</button>
                                 </div>
                             </div>
                             <div class="chart-container"><canvas id="salesChart"></canvas></div>
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card-custom">
-                            <div class="card-header-custom">
-                                <h3 class="card-title">Lead Sources</h3>
+                        <div class="card">
+                            <div class="card__header">
+                                <h3 class="card__title">Lead Sources</h3>
                             </div>
                             <div class="chart-container"><canvas id="leadSourceChart"></canvas></div>
                         </div>
@@ -86,12 +86,12 @@
 
                 <div class="row mb-4">
                     <div class="col-lg-6">
-                        <div class="card-custom">
-                            <div class="card-header-custom dashboard-card-header">
-                                <h3 class="card-title">Recent Customers</h3>
+                        <div class="card">
+                            <div class="card__header dashboard-card-header">
+                                <h3 class="card__title">Recent Customers</h3>
                             </div>
-                            <div class="table-responsive-custom">
-                                <table class="table-custom">
+                            <div class="table-responsive">
+                                <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Customer</th>
@@ -111,7 +111,7 @@
                                             </td>
                                             <td>john.wilson@email.com</td>
                                             <td>+1 234 567 8900</td>
-                                            <td><span class="badge-custom badge-success">Active</span></td>
+                                            <td><span class="badge badge--success">Active</span></td>
                                             <td>PKR 45,890</td>
                                         </tr>
                                         <tr>
@@ -123,7 +123,7 @@
                                             </td>
                                             <td>sarah.j@company.com</td>
                                             <td>+1 234 567 8901</td>
-                                            <td><span class="badge-custom badge-warning">Pending</span></td>
+                                            <td><span class="badge badge--warning">Pending</span></td>
                                             <td>PKR 12,340</td>
                                         </tr>
                                         <tr>
@@ -135,7 +135,7 @@
                                             </td>
                                             <td>m.brown@business.org</td>
                                             <td>+1 234 567 8902</td>
-                                            <td><span class="badge-custom badge-success">Active</span></td>
+                                            <td><span class="badge badge--success">Active</span></td>
                                             <td>PKR 78,950</td>
                                         </tr>
                                         <tr>
@@ -147,7 +147,7 @@
                                             </td>
                                             <td>emily.davis@tech.io</td>
                                             <td>+1 234 567 8903</td>
-                                            <td><span class="badge-custom badge-danger">Inactive</span></td>
+                                            <td><span class="badge badge--danger">Inactive</span></td>
                                             <td>PKR 5,670</td>
                                         </tr>
                                     </tbody>
@@ -156,9 +156,9 @@
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="card-custom">
-                            <div class="card-header-custom">
-                                <h3 class="card-title">Patient Distribution by Area</h3>
+                        <div class="card">
+                            <div class="card__header">
+                                <h3 class="card__title">Patient Distribution by Area</h3>
                             </div>
                             <div class="chart-container"><canvas id="patientAreaChart"></canvas></div>
                         </div>
