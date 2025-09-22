@@ -54,13 +54,13 @@
                 ?>
                 <div class="card-custom">
                     <div class="card-header-custom page-card-header">
-                        <div class="card-title-container">
-                            <h3 class="card-title"><i class="fas fa-users" style="margin-right: var(--spacing-sm); color: var(--color-primary-light);"></i>Customer List</h3>
-                            <div class="d-flex align-items-center" style="gap: var(--spacing-sm);">
-                                <button class="btn-custom btn-primary-custom"><i class="fas fa-plus"></i> Add Customer</button>
-                            </div>
-                        </div>
-                        <div class="filter-bar d-none d-md-flex align-items-center">
+                         <div class="card-title-container">
+                             <h3 class="card-title"><i class="fas fa-users" style="margin-right: var(--spacing-sm); color: var(--color-primary-light);"></i>Customer List</h3>
+                             <div class="d-flex align-items-center" style="gap: var(--spacing-sm);">
+                                 <button class="btn-custom btn-primary-custom"><i class="fas fa-plus"></i> Add Customer</button>
+                             </div>
+                         </div>
+                         <div class="filter-bar d-none d-md-flex align-items-center">
                             <form id="customerFilterForm" class="d-flex align-items-center" onsubmit="return false;" style="gap: var(--spacing-sm);">
                                 <div class="filter-input-container">
                                 <input type="text" class="form-control form-control-md" id="filterQuery" placeholder="Search name">
@@ -215,55 +215,49 @@
                                 <div class="row g-3">
 
 
-                                    <!-- Personal Information -->
-                                    <div class="col-12 col-md-12">
-                                        <div class="info-section">
-                                            <h6 class="info-section-title">
-                                                <i class="fas fa-user"></i>
-                                                Personal Information
-                                            </h6>
-                                            <div class="info-item-row">
-                                                <div class="info-item">
-                                                    <label>Email</label>
-                                                    <span id="customerViewEmail">john.doe@example.com</span>
-                                                </div>
-                                                <div class="info-item">
-                                                    <label>Phone</label>
-                                                    <span id="customerViewPhone">+1 (555) 123-4567</span>
-                                                </div>
-                                            </div>
-                                            <div class="info-item-row">
-                                                <div class="info-item">
-                                                    <label>Age</label>
-                                                    <span id="customerViewAge">28</span>
-                                                </div>
-                                                <div class="info-item">
-                                                    <label>Birth Date</label>
-                                                    <span id="customerViewBirthDate">1995-03-15</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Status & Revenue -->
-                                    <div class="col-12 col-md-12">
-                                        <div class="info-section">
-                                            <h6 class="info-section-title">
-                                                <i class="fas fa-chart-line"></i>
-                                                Business Information
-                                            </h6>
-                                            <div class="info-item-row">
-                                                <div class="info-item">
-                                                    <label>Status</label>
-                                                    <span class="status-badge" id="customerViewStatusDetail">Active</span>
-                                                </div>
-                                                <div class="info-item">
-                                                    <label>Revenue</label>
-                                                    <span class="revenue-amount" id="customerViewRevenue">PKR 45,890</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                     <!-- All Data Fields in Single Section -->
+                                     <div class="col-12">
+                                         <div class="info-section">
+                                             <h6 class="info-section-title">
+                                                 <i class="fas fa-user"></i>
+                                                 Customer Information
+                                             </h6>
+                                             <div class="info-items-grid">
+                                                 <div class="info-item">
+                                                     <label>Email</label>
+                                                     <span id="customerViewEmail">john.doe@example.com</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Phone</label>
+                                                     <span id="customerViewPhone">+1 (555) 123-4567</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Age</label>
+                                                     <span id="customerViewAge">28</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Birth Date</label>
+                                                     <span id="customerViewBirthDate">1995-03-15</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Status</label>
+                                                     <span class="status-badge" id="customerViewStatusDetail">Active</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Revenue</label>
+                                                     <span class="revenue-amount" id="customerViewRevenue">PKR 45,890</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Registration Date</label>
+                                                     <span id="customerViewRegDate">2023-01-15</span>
+                                                 </div>
+                                                 <div class="info-item">
+                                                     <label>Last Contact</label>
+                                                     <span id="customerViewLastContact">2024-01-20</span>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                     </div>
 
 
                                     <!-- Notes Section -->
